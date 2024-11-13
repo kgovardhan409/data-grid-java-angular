@@ -1,0 +1,32 @@
+<div class="container">
+    <h1 class="my-3 mb-5 text-center" *ngIf="!isEdit">Add new product</h1>
+    <h1 class="my-3 mb-5 text-center" *ngIf="isEdit">Edit product</h1>
+    <form class="col-lg-6 m-auto" #addProductForm="ngForm" (ngSubmit)="submitForm()">
+        <div class="mb-3 row">
+            <label for="name" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="name" name="name" value="" required [(ngModel)]="product.name">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="quantity" class="col-sm-2 col-form-label">Quantity</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="quantity" name="quantity" required [(ngModel)]="product.quantity">
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label for="price" class="col-sm-2 col-form-label">Price</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="price" name="price" required [(ngModel)]="product.price">
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+             <div class="col-sm-3 text-center">
+                <button class="btn btn-success" [disabled]="!addProductForm.valid">Save</button>
+                <a class="btn btn-secondary ms-3" routerLink="/products">Back</a>
+             </div>
+          </div>
+      </form>
+</div>

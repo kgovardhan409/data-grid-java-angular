@@ -1,0 +1,28 @@
+
+<!-- The AG Grid component -->
+<h1 style="text-align: center;margin: 40px 0">Product Details Grid - Angular and Java Spring Boot</h1>
+<div class="container">
+  <div class="searchRow">
+    <button class="addBtn btn btn-success btn-lg" title="Add" (click)="add()"> Add new record </button>
+    <!-- <input type="search" placeholder="Search Name" (keyup)="search($event)"> -->
+  </div>
+  <div class="row">
+    <div class="grid">
+      <ag-grid-angular
+      class="ag-theme-quartz"
+      style="height: 100%;width: 100%"
+      [rowData]="rowData"
+      [columnDefs]="colDefs"
+      [defaultColDef]="defaultColDef"
+      [rowModelType]="rowModelType"
+      [pagination]="true"
+      [paginationPageSize]="paginationPageSize"
+      [cacheBlockSize]="cacheBlockSize"
+      [maxBlocksInCache]="maxBlocksInCache"
+      (gridReady)="onGridReady($event)"
+      [paginationPageSizeSelector]="paginationPageSizeSelector"
+      
+      />
+    </div>
+  </div>
+</div>
